@@ -1,0 +1,89 @@
+<nav class="navbar bg-dark">
+  <div class="container">
+    <h2>Angular Crud com Reactive Form</h2>
+</div>
+
+<div class="d-flex">
+  <button class="btn btn-success btn-Add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Incluir funcionário
+  </button>
+</div>
+
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div style="background-color: blueviolet;" class="modal-header">
+        <h5 style="color: white;" class="modal-title" id="exampleModalLabel">ADICIONAR FUNCIONÁRIO</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="employeeform">
+          <div class="form-group mb-2">
+            <label for="exampleInputEmail1">Nome</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Seu nome">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="seu email">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="exampleInputEmail1">Cidade</label>
+            <input type="text" class="form-control" formControlName="city" placeholder="sua cidade">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="exampleInputEmail1">Código</label>
+            <input type="number" class="form-control" formControlName="code"  placeholder="seu codigo">
+          </div>
+
+          <div class="form-group mb-2">
+            <label for="exampleInputEmail1">Telefone</label>
+            <input type="number" class="form-control" formControlName="phone"  placeholder="Seu telefone">
+          </div>
+
+        </form>
+
+      </div>
+      <div style="background-color: blueviolet;" class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button (click)="addemployee(this.employeeform.value)" [disabled]="this.employeeform.invalid" type="button" class="btn btn-primary">Incluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-3">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">Código</th>
+        <th scope="col">Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.code }}</td>
+        <td>{{ item.phone }}</td>
+        <td>
+          <button routerLink="/update/{{item.id}}" class="btn btn-warning">Editar</button>&nbsp;
+          <button class="btn btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

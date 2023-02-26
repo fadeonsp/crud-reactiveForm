@@ -1,0 +1,25 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "name": "deus",
+      "email": "deus@email.com",
+      "city": "ceu",
+      "code": 234,
+      "phone": 123987,
+      "id": 2
+    },
+    {
+      "name": "João",
+      "email": "joao@email.com",
+      "city": "BH",
+      "code": 234,
+      "phone": 99887766,
+      "id": 3
+    }
+  ]
+}

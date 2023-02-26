@@ -2,12 +2,12 @@ CRUD SIMPLES EM ANGULAR
 
 ferramentas backend
 
--Json-server
+-json-server
 
 ferramentas frontend
 
 - angular
--bootstrar
+-bootstrap
 
 usei json server para simular uma API 
 
